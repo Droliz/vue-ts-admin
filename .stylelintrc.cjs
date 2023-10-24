@@ -27,6 +27,7 @@ module.exports = {
     '**/*.yaml'
   ],
   rules: {
+    'color-hex-length': 'long', // 指定颜色长度
     'value-keyword-case': null, // 指定小写或大写关键字的值
     'no-descending-specificity': null, // 禁止在具有较高优先级的选择器后出现被其覆盖的较低优先级的选择器
     'function-url-quotes': 'always', // 指定函数 url 使用引号

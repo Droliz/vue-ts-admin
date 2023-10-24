@@ -1,9 +1,10 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
     node: true,
-    jest: true,
+    jest: true
   },
   parser: "vue-eslint-parser",
   parserOptions: {
@@ -12,25 +13,25 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     jsxPragma: "React",
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   extends: [
     "eslint:recommended",
     "plugin:vue/vue3-essential",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
   ],
   overrides: [
     {
       env: {
-        node: true,
+        node: true
       },
       files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: "script",
-      },
-    },
+        sourceType: "script"
+      }
+    }
   ],
   plugins: ["@typescript-eslint", "vue"],
   /*
@@ -40,26 +41,27 @@ module.exports = {
    */
   rules: {
     // eslint (https://eslint.bootcss.com/docs/rules/)
-    "no-var": "error", // 禁止使用 var
-    "no-multiple-empty-lines": ["warn", { max: 1 }], // 禁止出现多行空行
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off", // 禁止使用 console
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off", // 禁止使用 debugger
+    // "no-var": "error", // 禁止使用 var
+    // "no-multiple-empty-lines": ["warn", { max: 1 }], // 禁止出现多行空行
+    // "no-console": process.env.NODE_ENV === "production" ? "warn" : "off", // 禁止使用 console
+    // "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off", // 禁止使用 debugger
     // "no-unexpected-multiline": "error", // 禁止使用令人困惑的多行表达式
+    "no-param-reassign": 0, // 禁止对函数的形参进行赋值
 
     // typeScript (https://typescript-eslint.io/rules)
-    "@typescript-eslint/no-unused-vars": "error", // 禁止出现未使用过的变量
-    "@typescript-eslint/prefer-ts-expect-error": "error", // 使用 @ts-expect-error 而不是 @ts-ignore
-    "@typescript-eslint/no-explicit-any": "off", // 禁止使用 any
-    "@typescript-eslint/no-non-null-assertion": "off", // 禁止使用 non-null 断言
-    "@typescript-eslint/no-no-namespace": "off", // 禁止使用自定义 typescript 模块和命名空间
-    "@typescript-eslint/no-empty-function": "off", // 禁止空函数
-    "@typescript-eslint/no-empty-interface": "off", // 禁止空接口
+    "@typescript-eslint/no-unused-vars": 1, // 禁止出现未使用过的变量
+    // "@typescript-eslint/prefer-ts-expect-error": "error", // 使用 @ts-expect-error 而不是 @ts-ignore
+    // "@typescript-eslint/no-explicit-any": "off", // 禁止使用 any
+    // "@typescript-eslint/no-non-null-assertion": "off", // 禁止使用 non-null 断言
+    // "@typescript-eslint/no-no-namespace": "off", // 禁止使用自定义 typescript 模块和命名空间
+    "@typescript-eslint/no-empty-function": 1, // 禁止空函数
+    "@typescript-eslint/no-empty-interface": 1, // 禁止空接口
     // "@typescript-eslint/semi": "off", // 禁止使用分号
 
     // eslint-plugin-vue (https://eslint.vuejs.org/rules/)
-    "vue/multi-word-component-names": "off", // 组件名必须是多个单词  - 连接符连接
-    "vue/script-setup-uses-vars": "error", // 确保在 <script setup> 中使用的变量被声明
-    "vue/no-mutating-props": "off", // 禁止修改 props
-    "vue/attribute-hyphenation": "off", // 组件的属性名必须使用连字符连接
-  },
+    "vue/multi-word-component-names": 0 // 组件名必须是多个单词  - 连接符连接
+    // "vue/script-setup-uses-vars": "error", // 确保在 <script setup> 中使用的变量被声明
+    // "vue/no-mutating-props": "off", // 禁止修改 props
+    // "vue/attribute-hyphenation": "off", // 组件的属性名必须使用连字符连接
+  }
 };

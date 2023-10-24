@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="box">app.vue</div>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="less"></style>
